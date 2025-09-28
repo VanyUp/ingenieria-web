@@ -5,6 +5,7 @@ class Producto(models.Model):
     descripcion = models.TextField()
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     imagen = models.URLField(blank=True)
+    #activo = models.BooleanField(default=True)
     stock = models.IntegerField()
     
     

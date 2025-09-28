@@ -1,0 +1,20 @@
+.about-content{ display: flex; flex-direction: column; gap: 2rem; }
+
+.about-text p{ margin-bottom: 1.5rem; font-size: 1.1rem; }
+
+.personal-info{
+  margin-top: 2rem; display: grid; grid-template-columns: repeat(2,1fr); gap: 1rem;
+  .info-item{ display: flex; gap: .5rem; }
+  .info-label{ font-weight: 500; color: $primary; }
+}
+
+.about-stats{ display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
+.stat-number{ font-family: 'Orbitron', sans-serif; font-size: 2.5rem; font-weight: 700; color: $primary; margin-bottom: .5rem; }
+.stat-text{ font-size: .9rem; color: $gray; }
+
+@include mq($bp-sm){
+  .about-stats{ grid-template-columns: repeat(4,1fr); }
+  .personal-info{ grid-template-columns: repeat(2,1fr); }
+}
+
+@include mq($bp-md){ .about-content{ flex-direction: row; } }

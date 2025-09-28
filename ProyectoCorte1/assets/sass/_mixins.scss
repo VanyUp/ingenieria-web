@@ -1,0 +1,10 @@
+@mixin mq($min) { @media (min-width: $min) { @content; } }
+
+@mixin gradient-bar($from,$to){ background: linear-gradient(to right, $from, $to); }
+
+%card {
+  background-color: $light;
+  border: 1px solid rgba(0,0,0,.05);
+  border-radius: $radius;
+  box-shadow: $shadow;
+}

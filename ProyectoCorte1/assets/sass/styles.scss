@@ -1,0 +1,20 @@
+@import "variables";
+@import "mixins";
+@import "base";
+@import "layout";
+@import "animations";
+
+@import "components/buttons";
+@import "components/nav";
+@import "components/back-to-top";
+@import "components/cards";
+
+@import "sections/header";
+@import "sections/hero";
+@import "sections/about";
+@import "sections/skills";
+@import "sections/soft-skills";
+@import "sections/education";
+@import "sections/project"; 
+@import "sections/contact";
+@import "sections/footer";

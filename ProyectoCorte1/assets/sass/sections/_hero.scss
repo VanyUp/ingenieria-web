@@ -1,0 +1,36 @@
+.hero{
+  min-height: 100vh; display: flex; align-items: center;
+  background: linear-gradient(135deg, rgba(10,10,20,.9), rgba(30,0,80,.8)), url('../img/hero-bg.jpg') no-repeat center/cover;
+  color: $light; padding-top: 70px; position: relative; overflow: hidden;
+
+  &::before{
+    content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 70% 20%, rgba(110,0,255,.2), transparent 50%);
+  }
+
+  .hero-content{ position: relative; z-index: 1; text-align: center; }
+  .hero-title{ font-size: 3rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 2px; line-height: 1.1; }
+  .hero-subtitle{ font-size: 1.2rem; margin: 0 auto 2rem; opacity: .9; max-width: 600px; }
+  .hero-btns{ display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; }
+
+  .hero-image{ margin-top: 3rem; position: relative; }
+  .profile-img{
+    width: 200px; height: 200px; border-radius: 50%; object-fit: cover;
+    border: 5px solid $primary; box-shadow: 0 0 30px rgba(110,0,255,.5); margin: 0 auto; display: block;
+  }
+
+  .tech-icons{
+    display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap;
+    i{ font-size: 2.5rem; color: $secondary; transition: $transition; &:hover{ transform: translateY(-5px) scale(1.1); color: $light; } }
+  }
+}
+
+@include mq($bp-md){
+  .hero{
+    .container{ display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 3rem; }
+    .hero-content{ text-align: left; }
+    .hero-btns{ justify-content: flex-start; }
+    .hero-image{ margin-top: 0; }
+  }
+}
+
+@include mq($bp-lg){ .hero .hero-title{ font-size: 4rem; } }
