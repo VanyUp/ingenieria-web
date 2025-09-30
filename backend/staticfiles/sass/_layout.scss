@@ -1,0 +1,15 @@
+.container { width: 100%; max-width: $container-max; margin: 0 auto; padding: 0 1.5rem; }
+
+.section { padding: 5rem 0; }
+
+.section-title {
+  font-size: 2.5rem; text-align: center; margin-bottom: 3rem; position: relative;
+  &::after {
+    content: ""; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+    width: 80px; height: 4px; @include gradient-bar($primary,$secondary); border-radius: 2px;
+  }
+}
+
+@include mq($bp-lg){
+  .section-title{ font-size: 3rem; }
+}

@@ -1,0 +1,47 @@
+// Colores y tokens de los componentes
+$primary: #6e00ff;
+$primary-dark: #4a00b3;
+$secondary: #00f0ff;
+$dark: rgba(30,0,80,.8);
+$light: #f8f9fa;
+$gray: #6c757d;
+
+//Base Dark Theme
+$bg: #0b0b11; //fondo del sitio (body). Cambia el “negro” base del tema.
+$panel: #2b0067; //fondo de tarjetas/paneles (card, cajas de FAQ/form). Un tono por encima de $bg.
+$panel-2: #4a00b3; //degradado interno de inputs/paneles. Suele ser un poco más claro/oscuro que $panel.
+$text: #f7f7f7; //texto principal. Cambia casi todos los textos.
+$muted: #aab0c0; //texto secundario (ayudas, descripciones, hints).
+$ok: #22c55e; //estado éxito (mensajes/validaciones).
+$err: #f43f5e; //estado error (mensajes/validaciones).
+$brand: #8b5cf6;   // morado principal (borde/focus/gradientes).
+$brand-2: #c084fc; // morado claro (2º color en gradientes/botones).
+$ring: rgba(139, 92, 246, .35); //halo de enfoque (box-shadow al focus).
+$shadow: 0 30px 60px rgba(115, 43, 133, 0.45);  //sombra de cards/componentes 
+
+$radius: 8px; //redondeo de bordes (inputs, cards, botones).
+//$shadow: 0 5px 15px rgba(0,0,0,.1);
+$transition: all .3s ease; // animaciones suaves.
+
+
+// $bp-sm, $bp-md, $bp-lg: anchos para media-queries.
+// $container-max: ancho máximo de contenedor.
+// Breakpoints
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$container-max: 1200px;
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
