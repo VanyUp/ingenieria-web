@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     "apps.faq",
     "apps.portafolio",
     "apps.libros",
-  
 ]
 
 MEDIA_URL  = '/media/'
