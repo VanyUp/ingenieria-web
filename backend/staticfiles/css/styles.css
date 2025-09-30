@@ -1,5 +1,7 @@
 @charset "UTF-8";
-.timeline-content, .skill-category, .stat-card, .experience-card, .project-card, .contact-form {
+.contact-form, .timeline-content, .skill-category, .stat-card,
+.experience-card,
+.project-card {
   background-color: #f8f9fa;
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 8px;
@@ -24,7 +26,12 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Orbitron", sans-serif;
   font-weight: 700;
   line-height: 1.2;
@@ -49,7 +56,8 @@ a {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -866,7 +874,8 @@ body.theme-tech {
   margin-bottom: 1.5rem;
 }
 
-.form-group input, .form-group textarea {
+.form-group input,
+.form-group textarea {
   width: 100%;
   padding: 0.8rem 1rem;
   border: 1px solid #ddd;
@@ -875,7 +884,8 @@ body.theme-tech {
   font-size: 1rem;
   transition: all 0.3s ease;
 }
-.form-group input:focus, .form-group textarea:focus {
+.form-group input:focus,
+.form-group textarea:focus {
   outline: none;
   border-color: #6e00ff;
   box-shadow: 0 0 0 3px rgba(110, 0, 255, 0.1);
@@ -923,13 +933,15 @@ body.theme-tech {
   margin-top: 1rem;
   font-size: 0.95rem;
 }
-.footer .footer-links h3, .footer .footer-contact h3 {
+.footer .footer-links h3,
+.footer .footer-contact h3 {
   font-size: 1.3rem;
   margin-bottom: 1.5rem;
   position: relative;
   padding-bottom: 0.5rem;
 }
-.footer .footer-links h3::after, .footer .footer-contact h3::after {
+.footer .footer-links h3::after,
+.footer .footer-contact h3::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -938,7 +950,8 @@ body.theme-tech {
   height: 3px;
   background-color: #00f0ff;
 }
-.footer .footer-links ul, .footer .footer-contact ul {
+.footer .footer-links ul,
+.footer .footer-contact ul {
   list-style: none;
 }
 .footer .footer-links li {

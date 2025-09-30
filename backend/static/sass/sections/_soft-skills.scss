@@ -1,16 +1,60 @@
-.soft-skills{
-  background-color: $dark; color: $light;
-  .section-title::after{ @include gradient-bar($secondary,$primary); }
-}
-.soft-skills-grid{ display: grid; grid-template-columns: repeat(1,1fr); gap: 1.5rem; }
-.soft-skill-card{
-  background-color: rgba(137, 132, 132, 0.05); padding: 2rem; border-radius: $radius; text-align: center;
-  transition: $transition; border: 1px solid rgba(255, 255, 255, 0.1);
-  &:hover{ transform: translateY(-5px); background-color: rgba(110,0,255,.1); border-color: $primary; }
-}
-.soft-skill-icon{ font-size: 2.5rem; color: $secondary; margin-bottom: 1.5rem; }
-.soft-skill-title{ font-size: 1.3rem; margin-bottom: 1rem; }
-.soft-skill-desc{ font-size: .95rem; opacity: .8; }
+@use '../variables' as v;
+@use '../mixins' as *;
 
-@include mq($bp-sm){ .soft-skills-grid{ grid-template-columns: repeat(2,1fr); } }
-@include mq($bp-lg){ .soft-skills-grid{ grid-template-columns: repeat(3,1fr); } }
+.soft-skills {
+  background-color: v.$dark;
+  color: v.$light;
+
+  .section-title::after {
+    @include gradient-bar(v.$secondary, v.$primary);
+  }
+}
+
+.soft-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+.soft-skill-card {
+  background-color: rgba(137, 132, 132, 0.05);
+  padding: 2rem;
+  border-radius: v.$radius;
+  text-align: center;
+  transition: v.$transition;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  &:hover {
+    transform: translateY(-5px);
+    background-color: rgba(110, 0, 255, .1);
+    border-color: v.$primary;
+  }
+}
+
+.soft-skill-icon {
+  font-size: 2.5rem;
+  color: v.$secondary;
+  margin-bottom: 1.5rem;
+}
+
+.soft-skill-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.soft-skill-desc {
+  font-size: .95rem;
+  opacity: .8;
+}
+
+@include mq(v.$bp-sm) {
+  .soft-skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include mq(v.$bp-lg) {
+  .soft-skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

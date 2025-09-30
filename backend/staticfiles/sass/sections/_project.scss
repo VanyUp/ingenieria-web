@@ -1,27 +1,108 @@
-.projects{
-  background-color: $dark; color: $light;
+@use '../variables' as v;
+@use '../mixins' as *;
+
+.projects {
+  background-color: v.$dark;
+  color: v.$light;
 }
 
-.projects-grid{ display: grid; grid-template-columns: repeat(1,1fr); gap: 2rem; }
-.project-image{ position: relative; height: 200px; overflow: hidden;
-  img{ width: 100%; height: 100%; object-fit: cover; transition: $transition;  }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
 }
-.project-card:hover .project-image img{ transform: scale(1.05); justify-content: center; }
-.project-tech{
-  position: absolute; bottom: 10px; left: 10px; display: flex; gap: .5rem;
-  span{ background-color: rgba(10,10,20,.8); color: $light; padding: .3rem .8rem; border-radius: 20px; font-size: .7rem; font-weight: 500; }
-}
-.project-content{ padding: 1.5rem; }
-.project-title{ font-size: 1.3rem; margin-bottom: .5rem; color: $dark; }
-.project-desc{ margin-bottom: 1.5rem; font-size: .95rem; color: $gray; }
-.project-links{
-  display: flex; gap: 1rem;
-  .project-link{
-    padding: .5rem 1.2rem; border-radius: $radius; font-size: .9rem; font-weight: 500; transition: $transition;
-    &:first-child{ background-color: $primary; color: $light; &:hover{ background-color: $primary-dark; } }
-    &:last-child { background-color: transparent; color: $primary; border: 1px solid $primary; &:hover{ background-color: rgba(110,0,255,.1); } }
+
+.project-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: v.$transition;
   }
 }
 
-@include mq($bp-md){ .projects-grid{ grid-template-columns: repeat(2,1fr); } }
-@include mq($bp-lg){ .projects-grid{ grid-template-columns: repeat(3,1fr); } }
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+  justify-content: center;
+}
+
+.project-tech {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  gap: .5rem;
+
+  span {
+    background-color: rgba(10, 10, 20, .8);
+    color: v.$light;
+    padding: .3rem .8rem;
+    border-radius: 20px;
+    font-size: .7rem;
+    font-weight: 500;
+  }
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-title {
+  font-size: 1.3rem;
+  margin-bottom: .5rem;
+  color: v.$dark;
+}
+
+.project-desc {
+  margin-bottom: 1.5rem;
+  font-size: .95rem;
+  color: v.$gray;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+
+  .project-link {
+    padding: .5rem 1.2rem;
+    border-radius: v.$radius;
+    font-size: .9rem;
+    font-weight: 500;
+    transition: v.$transition;
+
+    &:first-child {
+      background-color: v.$primary;
+      color: v.$light;
+
+      &:hover {
+        background-color: v.$primary-dark;
+      }
+    }
+
+    &:last-child {
+      background-color: transparent;
+      color: v.$primary;
+      border: 1px solid v.$primary;
+
+      &:hover {
+        background-color: rgba(110, 0, 255, .1);
+      }
+    }
+  }
+}
+
+@include mq(v.$bp-md) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@include mq(v.$bp-lg) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

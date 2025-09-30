@@ -1,11 +1,31 @@
-.stat-card, .experience-card, .project-card, .contact-form { @extend %card; }
+@use '../variables' as v;
+@use '../mixins' as *;
 
-.stat-card{
-  text-align: center; padding: 1.5rem; transition: $transition;
-  &:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,.1); }
+.stat-card,
+.experience-card,
+.project-card,
+.contact-form {
+  @extend %card;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 1.5rem;
+  transition: v.$transition;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .1);
+  }
 }
 
 .project-card {
-  border-radius: $radius; overflow: hidden; transition: $transition;
-  &:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,.15); }
+  border-radius: v.$radius;
+  overflow: hidden;
+  transition: v.$transition;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .15);
+  }
 }

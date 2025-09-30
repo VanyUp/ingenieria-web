@@ -1,4 +1,4 @@
-@use 'variables';
+@use './variables' as v;
 
 
 * {
@@ -8,6 +8,6 @@
 }
 
 body {
-    font-family: variables.$fuente-principal;
-    background-color: variables.$color-fondo;
+    font-family: v.$fuente-principal;
+    background-color: v.$color-fondo;
 }

@@ -1,19 +1,70 @@
-.contact-content{ display: flex; flex-direction: column; gap: 3rem; }
-.contact-info{ text-align: center; }
-.contact-subtitle{ font-size: 1.8rem; margin-bottom: 1.5rem; }
-.contact-text{ margin-bottom: 2rem; font-size: 1.1rem; }
-.contact-methods{ display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem; }
-.contact-method{ display: flex; align-items: center; justify-content: center; gap: 1rem; font-size: 1.1rem;
-  i{ color: $primary; font-size: 1.3rem; }
-}
-.social-links{ display: flex; justify-content: center; gap: 1.5rem; }
-.social-link{
-  width: 40px; height: 40px; border-radius: 50%; background-color: rgba(110,0,255,.1);
-  display:flex; align-items:center; justify-content:center; transition:$transition;
-  &:hover{ background-color:$primary; color:white; transform: translateY(-3px); }
+@use '../variables' as v;
+@use '../mixins' as *;
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
-.contact-info{
+.contact-info {
+  text-align: center;
+}
+
+.contact-subtitle {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-text {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+
+  i {
+    color: v.$primary;
+    font-size: 1.3rem;
+  }
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(110, 0, 255, .1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: v.$transition;
+
+  &:hover {
+    background-color: v.$primary;
+    color: white;
+    transform: translateY(-3px);
+  }
+}
+
+.contact-info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,18 +72,56 @@
 
 }
 
-.contact-form{ @extend %card; padding: 2rem; }
-.form-group{ margin-bottom: 1.5rem; }
-.form-group input, .form-group textarea{
-  width: 100%; padding: .8rem 1rem; border: 1px solid #ddd; border-radius: $radius; font: inherit; font-size: 1rem; transition: $transition;
-  &:focus{ outline: none; border-color: $primary; box-shadow: 0 0 0 3px rgba(110,0,255,.1); }
+.contact-form {
+  @extend %card;
+  padding: 2rem;
 }
-.form-group textarea{ resize: vertical; min-height: 120px; }
 
-@include mq($bp-md){
-  .contact-content{ flex-direction: row; }
-  .contact-info{ flex: 1; text-align: left; }
-  .contact-methods{ align-items: flex-start; }
-  .social-links{ justify-content: flex-start; }
-  .contact-form{ flex: 1; }
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: .8rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: v.$radius;
+  font: inherit;
+  font-size: 1rem;
+  transition: v.$transition;
+
+  &:focus {
+    outline: none;
+    border-color: v.$primary;
+    box-shadow: 0 0 0 3px rgba(110, 0, 255, .1);
+  }
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+@include mq(v.$bp-md) {
+  .contact-content {
+    flex-direction: row;
+  }
+
+  .contact-info {
+    flex: 1;
+    text-align: left;
+  }
+
+  .contact-methods {
+    align-items: flex-start;
+  }
+
+  .social-links {
+    justify-content: flex-start;
+  }
+
+  .contact-form {
+    flex: 1;
+  }
 }

@@ -1,5 +1,15 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+@use './variables' as v;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
@@ -7,21 +17,48 @@ body {
   background-color: #f5f5f5;
   overflow-x: hidden;
 }
-h1,h2,h3,h4,h5,h6 { font-family: 'Orbitron', sans-serif; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
-p { margin-bottom: 1rem; }
-a { text-decoration: none; color: inherit; transition: $transition; }
-.highlight { color: $primary; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: v.$transition;
+}
+
+.highlight {
+  color: v.$primary;
+}
 
 
-* { box-sizing: border-box; }
-html, body { height: 100%; }
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
 
 body.theme-tech {
   margin: 0;
-  background: radial-gradient(60vw 60vh at 10% -10%, rgba(139,92,246,.12), transparent 55%),
-              radial-gradient(80vw 60vh at 110% 20%, rgba(192,132,252,.10), transparent 60%),
-              $bg;
-  color: $text;
+  background: radial-gradient(60vw 60vh at 10% -10%, rgba(139, 92, 246, .12), transparent 55%),
+    radial-gradient(80vw 60vh at 110% 20%, rgba(192, 132, 252, .10), transparent 60%),
+    v.$bg;
+  color: v.$text;
   font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto, Arial, sans-serif;
 }
-

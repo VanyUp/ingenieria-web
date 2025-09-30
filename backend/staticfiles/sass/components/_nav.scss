@@ -1,33 +1,112 @@
+@use '../variables' as v;
+@use '../mixins' as *;
+
 .nav {
-  position: fixed; top: 70px; left: 0; width: 100%; background-color: $dark; padding: 1rem 0;
-  transform: translateY(-150%); opacity: 0; transition: $transition; z-index: 999;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background-color: v.$dark;
+  padding: 1rem 0;
+  transform: translateY(-150%);
+  opacity: 0;
+  transition: v.$transition;
+  z-index: 999;
 
-  &.active { transform: translateY(0); opacity: 1; }
+  &.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
 
-  .nav-list { list-style: none; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+  .nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
   .nav-link {
-    color: $light; font-weight: 500; font-size: 1.1rem; position: relative; padding: .5rem 0;
-    &::after { content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: $secondary; transition: $transition; }
-    &:hover::after, &.active::after { width: 100%; }
-    &.active { color: $secondary; }
+    color: v.$light;
+    font-weight: 500;
+    font-size: 1.1rem;
+    position: relative;
+    padding: .5rem 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: v.$secondary;
+      transition: v.$transition;
+    }
+
+    &:hover::after,
+    &.active::after {
+      width: 100%;
+    }
+
+    &.active {
+      color: v.$secondary;
+    }
   }
 }
 
 .menu-toggle {
-  background: none; border: none; cursor: pointer; width: 30px; height: 20px; position: relative; z-index: 1001;
-  display: flex; flex-direction: column; justify-content: space-between; padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
 
-  .bar { width: 100%; height: 3px; background-color: $light; border-radius: 3px; transition: $transition; }
+  .bar {
+    width: 100%;
+    height: 3px;
+    background-color: v.$light;
+    border-radius: 3px;
+    transition: v.$transition;
+  }
+
   &.active {
-    .bar:nth-child(1){ transform: translateY(8.5px) rotate(45deg); }
-    .bar:nth-child(2){ opacity: 0; }
-    .bar:nth-child(3){ transform: translateY(-8.5px) rotate(-45deg); }
+    .bar:nth-child(1) {
+      transform: translateY(8.5px) rotate(45deg);
+    }
+
+    .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .bar:nth-child(3) {
+      transform: translateY(-8.5px) rotate(-45deg);
+    }
   }
 }
 
-@include mq($bp-md){
-  .menu-toggle { display: none; }
-  .nav { position: static; transform: none; opacity: 1; width: auto; background-color: transparent; padding: 0;
-    .nav-list { flex-direction: row; gap: 2rem; }
+@include mq(v.$bp-md) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    transform: none;
+    opacity: 1;
+    width: auto;
+    background-color: transparent;
+    padding: 0;
+
+    .nav-list {
+      flex-direction: row;
+      gap: 2rem;
+    }
   }
 }

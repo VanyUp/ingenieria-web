@@ -1,17 +1,73 @@
-.skills-container{ display: flex; flex-direction: column; gap: 2.5rem; }
+@use '../variables' as v;
+@use '../mixins' as *;
 
-.skill-category{ @extend %card; padding: 1.5rem; }
-.skill-category-title{
-  font-size: 1.5rem; margin-bottom: 1.5rem; color: $primary; position: relative; padding-bottom: .5rem;
-  &::after{ content: ""; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background-color: $secondary; border-radius: 2px; }
-}
-.skill-list{ list-style: none; }
-.skill-item{ margin-bottom: 1.5rem; }
-.skill-name{ display: block; margin-bottom: .5rem; font-weight: 500; }
-.skill-bar{ height: 10px; background-color: #e9ecef; border-radius: 5px; overflow: hidden; }
-.skill-level{
-  height: 100%; @include gradient-bar($primary,$secondary); border-radius: 5px; position: relative;
-  &::after{ content: ""; position: absolute; inset: 0; background: linear-gradient(to right, rgba(255,255,255,.8) 0%, rgba(255,255,255,0) 100%); }
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
-@include mq($bp-md){ .skills-container{ grid-template-columns: repeat(2,1fr); } }
+.skill-category {
+  @extend %card;
+  padding: 1.5rem;
+}
+
+.skill-category-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: v.$primary;
+  position: relative;
+  padding-bottom: .5rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: v.$secondary;
+    border-radius: 2px;
+  }
+}
+
+.skill-list {
+  list-style: none;
+}
+
+.skill-item {
+  margin-bottom: 1.5rem;
+}
+
+.skill-name {
+  display: block;
+  margin-bottom: .5rem;
+  font-weight: 500;
+}
+
+.skill-bar {
+  height: 10px;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-level {
+  height: 100%;
+  @include gradient-bar(v.$primary, v.$secondary);
+  border-radius: 5px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, .8) 0%, rgba(255, 255, 255, 0) 100%);
+  }
+}
+
+@include mq(v.$bp-md) {
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

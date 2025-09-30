@@ -1,10 +1,37 @@
+@use '../variables' as v;
+@use '../mixins' as *;
+
 .btn {
-  display: inline-block; padding: .8rem 1.8rem; border-radius: $radius; font-weight: 500;
-  text-transform: uppercase; letter-spacing: 1px; font-size: .9rem; transition: $transition; border: 2px solid transparent;
-  &-primary { background-color: $primary; color: $light;
-    &:hover { background-color: $primary-dark; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(110,0,255,.3); }
+  display: inline-block;
+  padding: .8rem 1.8rem;
+  border-radius: v.$radius;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .9rem;
+  transition: v.$transition;
+  border: 2px solid transparent;
+
+  &-primary {
+    background-color: v.$primary;
+    color: v.$light;
+
+    &:hover {
+      background-color: v.$primary-dark;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(110, 0, 255, .3);
+    }
   }
-  &-secondary { background-color: transparent; color: $light; border-color: $light;
-    &:hover { background-color: rgba(255,255,255,.1); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,255,255,.1); }
+
+  &-secondary {
+    background-color: transparent;
+    color: v.$light;
+    border-color: v.$light;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, .1);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(255, 255, 255, .1);
+    }
   }
 }
