@@ -1,0 +1,85 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>FAQ | Libros</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body class="theme-tech">
+  <div class="shell">
+
+    <a href="{% url 'home' %}" class="back-chip">← Volver al portafolio</a>
+
+    <div class="card" style="width:min(920px,100%);">
+      <h1 style="text-align:center;">Preguntas frecuentes sobre mis <span class="highlight">libros</span></h1>
+
+      {% if messages %}
+      <div class="global-msg">
+        {% for m in messages %}
+        <p class="msg {{ m.tags }}">{{ m }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <!-- FAQs “quemadas” -->
+      {% if seed %}
+      <div class="accordion">
+        {% for it in seed %}
+        <details class="faq-item">
+          <summary class="faq-q">{{ it.q }}</summary>
+          <div class="faq-a">{{ it.a }}</div>
+        </details>
+        {% endfor %}
+      </div>
+      <hr class="divider">
+      {% endif %}
+
+      <!-- FAQs publicadas desde el CMS -->
+      {% if faq_list %}
+      <div class="accordion">
+        {% for f in faq_list %}
+        <details class="faq-item">
+          <summary class="faq-q">{{ f.question }}</summary>
+          <div class="faq-a">
+            {{ f.answer|default:"(Pronto publicaré mi respuesta)" }}
+          </div>
+        </details>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p style="text-align:center;opacity:.8">Aún no hay preguntas publicadas.</p>
+      {% endif %}
+
+      <hr class="divider">
+
+      <h2>¿Tienes una pregunta?</h2>
+      <form method="post" class="ask-form">
+        {% csrf_token %}
+        {{ form.hp }} {# honeypot #}
+
+        <div class="field">
+          {{ form.question.label_tag }}<br>
+          {{ form.question }}
+          {% for e in form.question.errors %}<div class="field-msg">{{ e }}</div>{% endfor %}
+        </div>
+
+        <div class="field">
+          {{ form.email.label_tag }}<br>
+          {{ form.email }}
+          {% for e in form.email.errors %}<div class="field-msg">{{ e }}</div>{% endfor %}
+        </div>
+
+        <button type="submit" class="cta">Enviar pregunta</button>
+      </form>
+    </div>
+  </div>
+  <script src="{% static 'js/fyq.js' %}"></script>
+
+</body>
+
+</html>

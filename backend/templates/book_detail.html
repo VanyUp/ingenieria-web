@@ -1,0 +1,37 @@
+{% load static %}
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ libro.title }} – Detalle</title>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body class="theme-tech">
+  <a href="{% url 'open' %}" class="back-chip">← Volver</a>
+
+  <main class="shell">
+    <article class="card book-detail">
+      <header class="book-header">
+        {% if libro.cover %}<img class="book-cover" src="{{ libro.cover.url }}" alt="{{ libro.title }}">{% endif %}
+        <div>
+          <h1>{{ libro.title }}</h1>
+          <p class="book-meta">{{ libro.author }} · {{ libro.year }}</p>
+        </div>
+      </header>
+
+      <p class="book-summary">{{ libro.summary }}</p>
+      <div class="book-description">{{ libro.description|linebreaks }}</div>
+
+
+      {% if tags %}
+      <ul class="book-tags">
+        {% for t in tags %}<li>#{{ t }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+    </article>
+  </main>
+</body>
+
+</html>

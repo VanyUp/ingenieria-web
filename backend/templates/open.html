@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Mis Libros</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body class="theme-tech">
+    <main class="books-shell">
+
+        <a class="back-chip" href="{% url 'home' %}">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            Volver
+        </a>
+        <header class="books-head">
+            <div>
+                <h1>Mis <span>Libros</span></h1>
+                <p class="muted">Lo que he leído: fantasía, romance, reinos y magia. Filtra por título, autor o
+                    etiqueta.</p>
+            </div>
+
+            <div class="search">
+                <i class="fi fi-search" aria-hidden="true"></i>
+                <input id="q" type="text" placeholder="Buscar libro, autor, palabra…" autocomplete="off">
+            </div>
+        </header>
+
+        <!-- Grid -->
+        <section id="books-grid" class="books-grid">
+            {% for b in libros %}
+            <article class="book-card" data-title="{{ b.title|lower }}" data-author="{{ b.author|lower }}"
+                data-tags="{{ b.keywords|lower }}" data-pages="{{ b.pages }}">
+                <a class="cover-wrap" href="{% url 'book_detail' slug=b.slug %}">
+                    {% if b.cover %}
+                    <img src="{{ b.cover.url }}" alt="Portada de {{ b.title }}">
+                    {% else %}
+                    <div class="cover-ph">Sin portada</div>
+                    {% endif %}
+                </a>
+
+                <div class="book-body">
+                    <h3 class="book-title">
+                        <a href="{% url 'book_detail' slug=b.slug %}">{{ b.title }}</a>
+                    </h3>
+                    <p class="book-meta">de {{ b.author }} · {{ b.year }} {{ b.pages }} </p>
+
+                    <p class="book-resume">
+                        {{ b.summary|default:b.description|truncatechars:120 }}
+                    </p>
+
+                    {% if b.tags_list %}
+                    <ul class="book-tags">
+                        {% for tag in b.tags_list %}
+                        <li>#{{ tag }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+
+
+                    <div class="book-actions">
+                        <a class="btn ghost" href="{% url 'book_detail' slug=b.slug %}">Ver detalle</a>
+                    </div>
+                </div>
+            </article>
+            {% empty %}
+            <p class="empty">Aún no hay libros cargados.</p>
+            {% endfor %}
+        </section>
+    </main>
+
+    <script src="{% static 'js/open.js' %}"></script>
+</body>
+
+</html>

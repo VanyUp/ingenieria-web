@@ -1,0 +1,25 @@
+@mixin mq($min) { @media (min-width: $min) { @content; } }
+
+@mixin gradient-bar($from,$to){ background: linear-gradient(to right, $from, $to); }
+
+%card {
+  background-color: $light;
+  border: 1px solid rgba(0,0,0,.05);
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
+
+
+@mixin card-style {
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(13, 15, 26, .9), rgba(13, 15, 26, .92));
+  border: 1px solid rgba(139, 92, 246, .25);
+  box-shadow: $shadow;
+}
+
+@mixin gradient-text {
+  background: linear-gradient(90deg, #fff, #c7bfff 40%, $brand 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

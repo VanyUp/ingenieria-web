@@ -1,0 +1,431 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Profesional | Ingeniera de Software</title>
+    <meta name="description"
+        content="Portafolio profesional de una Ingeniera de Software con experiencia en tecnologías modernas">
+
+    <!-- Fuentes de Google - Diseño futurista -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Hoja de estilos local -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MQP0H08TZB"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-MQP0H08TZB');
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5BGGTWVS');</script>
+<!-- End Google Tag Manager -->
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">Vany<span class="highlight">UP</span></a>
+
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Inicio</a></li>
+                    <li><a href="#about" class="nav-link">Perfil</a></li>
+                    <li><a href="#skills" class="nav-link">Habilidades</a></li>
+                    <li><a href="#education" class="nav-link">Formación</a></li>
+                    <li><a href="#projects" class="nav-link">Proyectos</a></li>
+                    <li><a href="#contact" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">INGENIERA DE <span class="highlight">SOFTWARE</span></h1>
+                    <p class="hero-subtitle">Transformando ideas en soluciones digitales innovadoras</p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
+                        <!-- 🔗 Ahora va al template contacto -->
+                        <a href="{% url 'contacto' %}" class="btn btn-secondary">Contactar</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="{% static 'img/profile.jpg' %}" alt="Foto de perfil de la ingeniera" class="profile-img">
+
+                    <div class="tech-icons">
+                        <i class="fab fa-html5" title="HTML5"></i>
+                        <i class="fab fa-java" title="Java"></i>
+                        <i class="fab fa-js" title="JavaScript"></i>
+                        <i class="fab fa-python" title="Python"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Acerca de mí -->
+        <section id="about" class="section about">
+            <div class="container">
+                <h2 class="section-title">Perfil <span class="highlight">Profesional</span></h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Ingeniera de Software con más de 5 años de experiencia en la creación de soluciones web
+                            innovadoras y escalables. Especializado en arquitecturas modernas y tecnologías de
+                            vanguardia.</p>
+                        <p>Apasionada por el código limpio, las buenas prácticas y la optimización del rendimiento.
+                            Capacidad para liderar equipos y gestionar proyectos complejos desde la concepción hasta el
+                            despliegue.</p>
+                        <div class="personal-info">
+                            <div class="info-item"> <span class="info-label">Nombre:</span> <span
+                                    class="info-value">Vanesa</span> </div>
+                            <div class="info-item"> <span class="info-label">Email:</span> <span
+                                    class="info-value">danylugo352@gmail.com</span> </div>
+                            <div class="info-item"> <span class="info-label">Teléfono:</span> <span
+                                    class="info-value">+57 3222224048</span> </div>
+                            <div class="info-item"> <span class="info-label">Ubicación:</span> <span
+                                    class="info-value">Bogotá, Colombia</span> </div>
+                        </div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">4+</div>
+                            <div class="stat-text">Años de experiencia</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-text">Proyectos completados</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-text">Clientes satisfechos</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-text">Tecnologías dominadas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- Sección Habilidades Técnicas -->
+        <section id="skills" class="section skills">
+            <div class="container">
+                <h2 class="section-title">Competencias <span class="highlight">Técnicas</span></h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Frontend</h3>
+                        <ul class="skill-list">
+                            <li class="skill-item"> <span class="skill-name">HTML5 & CSS3</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 95%;"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item"> <span class="skill-name">JavaScript</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%;"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Backend</h3>
+                        <ul class="skill-list">
+                            <li class="skill-item"> <span class="skill-name">Python</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%;"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item"> <span class="skill-name">SQL</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%;"></div>
+                                </div>
+                            </li> <span class="skill-name">Node.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 88%;"></div>
+                            </div>
+                            </li>
+                            <li class="skill-item"> <span class="skill-name">Bases de Datos</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 82%;"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Otras Tecnologías</h3>
+                        <ul class="skill-list">
+                            <li class="skill-item"> <span class="skill-name">Git</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%;"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item"> <span class="skill-name">Docker</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 70%;"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- Sección Habilidades Blandas -->
+        <section class="section soft-skills">
+            <div class="container">
+                <h2 class="section-title">Competencias <span class="highlight">Blandas</span></h2>
+                <div class="soft-skills-grid">
+                    <div class="soft-skill-card">
+                        <div class="soft-skill-icon"> <i class="fas fa-users"></i> </div>
+                        <h3 class="soft-skill-title">Trabajo en Equipo</h3>
+                        <p class="soft-skill-desc">Colaboración efectiva en entornos multidisciplinarios para alcanzar
+                            objetivos comunes.</p>
+                    </div>
+                    <div class="soft-skill-card">
+                        <div class="soft-skill-icon"> <i class="fas fa-lightbulb"></i> </div>
+                        <h3 class="soft-skill-title">Resolución de Problemas</h3>
+                        <p class="soft-skill-desc">Enfoque analítico para identificar y solucionar desafíos técnicos
+                            complejos.</p>
+                    </div>
+                    <div class="soft-skill-card">
+                        <div class="soft-skill-icon"> <i class="fas fa-comments"></i> </div>
+                        <h3 class="soft-skill-title">Comunicación</h3>
+                        <p class="soft-skill-desc">Habilidad para explicar conceptos técnicos a audiencias no técnicas.
+                        </p>
+                    </div>
+                    <div class="soft-skill-card">
+                        <div class="soft-skill-icon"> <i class="fas fa-tasks"></i> </div>
+                        <h3 class="soft-skill-title">Gestión de Tiempo</h3>
+                        <p class="soft-skill-desc">Priorización efectiva para cumplir con plazos en entornos ágiles.</p>
+                    </div>
+                    <div class="soft-skill-card">
+                        <div class="soft-skill-icon"> <i class="fas fa-book"></i> </div>
+                        <h3 class="soft-skill-title">Aprendizaje Continuo</h3>
+                        <p class="soft-skill-desc">Compromiso con la actualización constante en tecnologías emergentes.
+                        </p>
+                    </div>
+                    <div class="soft-skill-card">
+                        <div class="soft-skill-icon"> <i class="fas fa-handshake"></i> </div>
+                        <h3 class="soft-skill-title">Liderazgo</h3>
+                        <p class="soft-skill-desc">Capacidad para guiar equipos y tomar decisiones técnicas informadas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- Sección Formación Académica -->
+        <section id="education" class="section education">
+            <div class="container">
+                <h2 class="section-title">Formación <span class="highlight">Académica</span></h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2020 - 2021</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Programación de Software </h3>
+                            <p class="timeline-institution">Sena</p>
+                            <p class="timeline-desc">Introducción al Desarrollo de Software y herramientas de desarrollo
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Curso Full Stack</h3>
+                            <p class="timeline-institution">FreeCodeCamp</p>
+                            <p class="timeline-desc">Certificación en HTML5, CSS y js.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021 - 2025</div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">Ingeniera de Software</h3>
+                            <p class="timeline-institution">Universidad Manuela Beltran</p>
+                            <p class="timeline-desc">En Curso</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Proyectos Destacados -->
+        <section id="projects" class="section projects">
+            <div class="container">
+                <h2 class="section-title">Proyectos <span class="highlight">Destacados</span></h2>
+                <div class="projects-grid">
+
+                    <!-- UTM 1 -->
+                    <div class="project-card">
+                        <div class="project-image"> <img src="{% static 'img/UTM1.jpg' %}"
+                                alt="Plataforma de Gestión de Proyectos">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">ImSebas</h3>
+                            <p class="project-desc">Ingeniero experto en romper corazones, todo un bandido.</p>
+                            <div class="project-links"> <a href="#" class="project-link">Ver mas</a></div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 1 -->
+                    <div class="project-card">
+                        <div class="project-image"> <img src="{% static 'img/project1.png' %}"
+                                alt="Plataforma de Tarot y Psicología">
+                            <div class="project-tech"> <span>FastApi</span> <span>Open IA</span> <span>MongoDB</span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Plataforma de Tarot y Psicología</h3>
+                            <p class="project-desc">Plataforma con dos chats asistentes, que nos ayudan con el Tarot y consejos Psicologicos.</p>
+                            <div class="project-links"> <a href="https://proyeco-production.up.railway.app/" class="project-link">Ver</a> <a href="https://github.com/VanyUp/proyeco.git"
+                                    class="project-link">Código</a> </div>
+                        </div>
+                    </div>
+
+                    <!-- UTM 2 -->
+                    <div class="project-card">
+                        <div class="project-image"> <img src="{% static 'img/UTM2.jpg' %}"
+                                alt="Plataforma de Gestión de Proyectos">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">TaskFlow - Gestión de Proyectos</h3>
+                            <p class="project-desc">Plataforma SaaS para gestión ágil de proyectos con tableros Kanban,
+                                seguimiento de tiempo y reportes avanzados.</p>
+                            <div class="project-links"> <a href="#" class="project-link">Ver mas</a> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> <!-- Sección Contacto -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2 class="section-title">Contacto</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3 class="contact-subtitle">Información de <span class="highlight">Contacto</span></h3>
+                        <p class="contact-text">Si estás interesado en trabajar conmigo o quieres más información sobre
+                            mis servicios, no dudes en contactarme.</p>
+                        <div class="contact-methods">
+                            <div class="contact-method"> <i class="fas fa-envelope"></i>
+                                <span>danylugo352@gmail.com</span>
+                            </div>
+                            <div class="contact-method"> <i class="fas fa-phone"></i> <span>+57 322 222 4048</span>
+                            </div>
+                            <div class="contact-method"> <i class="fas fa-map-marker-alt"></i> <span>Bogotá,
+                                    Colombia</span> </div>
+                        </div>
+                        <div class="social-links"> <a href="https://www.linkedin.com/in/dany-lugo-15761428b/"
+                                class="social-link" aria-label="LinkedIn"> <i class="fab fa-linkedin-in"></i> </a> <a
+                                href="https://github.com/VanyUp" class="social-link" aria-label="GitHub"> <i
+                                    class="fab fa-github"></i> </a> </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">Vany<span class="highlight">Up</span></a>
+                    <p class="footer-text">Transformando ideas en soluciones digitales innovadoras.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h3 class="footer-title">Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="#home">Portafolio</a></li>
+                        <li><a href="{% url 'fyq' %}">Preguntas Frecuentes</a></li>
+                        <li><a href="{% url 'open' %}">Libros 2025</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3 class="footer-title">Contacto</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> danylugo352@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +57 322 222 4048</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Bogotá, Colombia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Vany Up. Todos los derechos reservados.</p>
+                <div class="footer-legal">
+                    <a href="#">Política de Privacidad</a>
+                    <a href="#">Términos de Servicio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Volver arriba -->
+    <a href="#home" class="back-to-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JS -->
+    <script src="{% static 'js/menu.js' %}"></script>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                const nav = document.querySelector('.nav');
+                if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                    document.querySelector('.menu-toggle').classList.remove('active');
+                }
+            });
+        });
+
+        window.addEventListener('scroll', function () {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+
+</html>
