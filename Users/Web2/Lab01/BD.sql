@@ -1,6 +1,7 @@
+--DROP DATABASE IF EXISTS libreria;-- Descomentar esta línea si se desea eliminar la base de datos existente antes de crear una nueva.
 CREATE DATABASE libreria;
 USE libreria;
-CREATE TABLE libros (
+CREATE TABLE IF NOT EXISTS libros (
     id INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(255) NOT NULL,
     autor VARCHAR(255) NOT NULL,
