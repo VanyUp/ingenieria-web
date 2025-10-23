@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">📚 Biblioteca Digital</h1>
+            <p class="subtitle">Descubre tu próxima lectura favorita</p>
+            
+            <div class="filters">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Buscar por título, autor o género...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <select id="genreFilter">
+                    <option value="">Todos los géneros</option>
+                </select>
+                <select id="yearFilter">
+                    <option value="">Todos los años</option>
+                </select>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <div class="books-grid" id="booksGrid">
+                <!-- Los libros se cargarán aquí dinámicamente -->
+            </div>
+        </main>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Cargando libros...</p>
+        </div>
+    </div>
+
+    <!-- Modal para detalles del libro -->
+    <div class="modal" id="bookModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div class="modal-body" id="modalBody">
+                <!-- Contenido del modal se cargará aquí -->
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/script.js"></script>
+</body>
+</html>
