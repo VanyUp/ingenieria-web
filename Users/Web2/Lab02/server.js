@@ -1,24 +1,19 @@
-const mysql = require('mysql');
 const express = require('express');
 const bodyParser = require('body-parser');
-const clientes = require('./cliente.model');
-//const path = require('path');
-const app = express();
+const clientesRoutes = require('./routes/clientes.routes');
 
+const app = express();
 
 app.use(bodyParser.json());
 
+// Ruta raíz
 app.get('/', (req, res) => {
-  res.send('Servidor activo. Usa /clientes para ver los datos.');
+  res.send('Servidor activo. Usa /api/clientes para ver los datos.');
 });
 
+// Prefijo para las rutas de clientes
+app.use('/api/clientes', clientesRoutes);
 
-// Rutas CRUD
-app.get('/clientes', clientes.obtenerClientes);
-app.post('/clientes', clientes.crearCliente);
-app.put('/clientes/:id', clientes.actualizarCliente);
-app.delete('/clientes/:id', clientes.eliminarCliente);
-
-app.listen(3000, () => console.log('Servidor ejecutándose en http://localhost:3000'));  
-
-
+app.listen(3000, () => {
+  console.log('🚀 Servidor ejecutándose en http://localhost:3000');
+});
